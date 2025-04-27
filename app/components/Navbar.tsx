@@ -10,7 +10,7 @@ import ThemeToggle from './ThemeToggle';
 
 export default function Navbar() {
   return (
-    <nav className="flex h-20 justify-between items-center px-8 sm:px-16 py-4 bg-background border-b">
+    <nav className="flex h-20 justify-between items-center px-8 lg:px-16 py-4 bg-background border-b">
       <Link href="/" className="text-3xl font-black text-foreground hover:text-pink transition-colors duration-300">
         Liam Maricato
       </Link>
@@ -28,16 +28,16 @@ export default function Navbar() {
             </SheetHeader>
             <ul className="flex flex-col gap-8 text-foreground text-xl font-black px-8">
               <li>
-                <Link href="/sobre" className="hover:text-pink transition-colors duration-300">Blog</Link>
+                <Link href="/blog" className="hover:text-pink transition-colors duration-300">Blog</Link>
               </li>
               <li>
-                <Link href="/#talentos" className="hover:text-pink transition-colors duration-300">Highlights</Link>
+                <Link href="/highlights" className="hover:text-pink transition-colors duration-300">Highlights</Link>
               </li>
               <li>
-                <Link href="" target="_blank" className="hover:text-pink transition-colors duration-300">Resume</Link>
+                <Link href="/resume" target="_blank" className="hover:text-pink transition-colors duration-300">Resume</Link>
               </li>
               <li>
-                <Link href="https://apoia.se/puriteaproject" target="_blank" className="hover:text-pink transition-colors duration-300">About Me</Link>
+                <Link href="/about" target="_blank" className="hover:text-pink transition-colors duration-300">About Me</Link>
               </li>
             </ul>
           </SheetContent>
@@ -45,16 +45,16 @@ export default function Navbar() {
 
         <ul className="hidden md:flex gap-8 text-foreground text-xl font-black">
           <li>
-            <Link href="/sobre" className="hover:text-pink transition-colors duration-300">Blog</Link>
+            <Link href="/blog" className="hover:text-pink transition-colors duration-300">Blog</Link>
           </li>
           <li>
-            <Link href="/#talentos" className="hover:text-pink transition-colors duration-300">Highlights</Link>
+            <Link href="/highlights" className="hover:text-pink transition-colors duration-300">Highlights</Link>
           </li>
           <li>
-            <Link href="" target="_blank" className="hover:text-pink transition-colors duration-300">Resume</Link>
+            <Link href="/resume" target="_blank" className="hover:text-pink transition-colors duration-300">Resume</Link>
           </li>
           <li>
-            <Link href="https://apoia.se/puriteaproject" target="_blank" className="hover:text-pink transition-colors duration-300">About me</Link>
+            <Link href="/about" target="_blank" className="hover:text-pink transition-colors duration-300">About me</Link>
           </li>
         </ul>
       </div>

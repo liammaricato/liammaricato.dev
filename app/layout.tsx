@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Nunito } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 
-const nunito = Nunito({
-  variable: "--font-nunito",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
@@ -22,23 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              try {
-                const savedTheme = localStorage.getItem('theme')
-                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-                
-                if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-                  document.documentElement.classList.add('dark')
-                }
-              } catch (e) {}
-            `,
-          }}
-        />
-      </head>
-      <body className={`${nunito.variable} antialiased`}>
+      <body className="antialiased" style={{ fontFamily: inter.style.fontFamily }}>
         <Navbar />
         {children}
         <Footer />
