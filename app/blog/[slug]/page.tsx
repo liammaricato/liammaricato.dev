@@ -23,9 +23,9 @@ async function getPost(slug: string): Promise<Post> {
   }
 }
 
-export default async function PostPage({ params }: { params: { slug: string } }) {
-  params = await params;
-  const post = await getPost(params.slug);
+export default async function PostPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = await getPost(slug);
   return (
     <div className="container flex flex-col items-center px-4 py-8">
       <h1 className="text-4xl font-bold mb-8">{post.title}</h1>

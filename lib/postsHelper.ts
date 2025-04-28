@@ -22,7 +22,6 @@ interface Post {
 
 const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes in milliseconds
 let postsCache: CacheItem<Post[]> | null = null;
-let lastCloneTime: number | null = null;
 
 async function cloneRepository(): Promise<void> {
   try {
@@ -38,7 +37,6 @@ async function cloneRepository(): Promise<void> {
     
     fs.mkdirSync(contentDir);
     await execAsync(`git clone ${repoUrl} ${contentDir}`);
-    lastCloneTime = Date.now();
   } catch (error) {
     console.error("Error cloning repository:", error);
     throw error;
@@ -109,7 +107,6 @@ async function getPost(slug: string): Promise<Post | null> {
 // Function to manually invalidate cache if needed
 function invalidateCache(): void {
   postsCache = null;
-  lastCloneTime = null;
 }
 
 export { getPosts, getPost, invalidateCache };

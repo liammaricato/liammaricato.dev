@@ -3,11 +3,11 @@ import { getPost } from "@/lib/postsHelper";
 
 export async function GET(
   request: Request,
-  { params }: { params: { slug: string } }
+  { params }: { params: Promise<{ slug: string }> }
 ) {
   try {
-    params = await params
-    const post = await getPost(params.slug);
+    const { slug } = await params;
+    const post = await getPost(slug);
 
     if (!post) {
       return NextResponse.json({ error: "Post not found" }, { status: 404 });
