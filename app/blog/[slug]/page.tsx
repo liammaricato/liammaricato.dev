@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 interface Post {
   slug: string;
   title: string;

@@ -14,6 +14,8 @@ async function getPosts(): Promise<Post[]> {
       next: { revalidate: 3600 }, // Revalidate every hour
     });
 
+    console.log('Response status:', apiUrl, res.status, res.ok);
+
     if (!res.ok) {
       throw new Error('Failed to fetch posts');
     }

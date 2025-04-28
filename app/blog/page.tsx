@@ -1,5 +1,7 @@
 import BlogPosts from '../components/BlogPosts';
 
+export const dynamic = 'force-dynamic';
+
 export default function BlogPage() {
   return (
     <div className="w-full flex flex-col items-center px-4 py-8 lg:px-16">
