@@ -6,7 +6,7 @@ interface Post {
 
 async function getPost(slug: string): Promise<Post> {
   try {
-    const apiUrl = `http://localhost:3000/api/posts/${slug}`;
+    const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/api/posts/${slug}`;
     const res = await fetch(apiUrl, {
       next: { revalidate: 3600 }, // Revalidate every hour
     });
