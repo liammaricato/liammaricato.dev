@@ -1,20 +1,16 @@
 import Link from 'next/link';
 
-interface Post {
-  slug: string;
-  title: string;
-  content: string;
-}
+import { Post } from '@/lib/postsHelper';
+
+const REVALIDATE_TIME = parseInt(process.env.REVALIDATE_TIME || "3600");
 
 async function getPosts(): Promise<Post[]> {
   try {
     const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/api/posts`;
     
     const res = await fetch(apiUrl, {
-      next: { revalidate: 3600 }, // Revalidate every hour
+      next: { revalidate: REVALIDATE_TIME },
     });
-
-    console.log('Response status:', apiUrl, res.status, res.ok);
 
     if (!res.ok) {
       throw new Error('Failed to fetch posts');
