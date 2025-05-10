@@ -44,7 +44,7 @@ export default async function BlogPosts() {
             </h2>
           </Link>
           <p className="text-muted-foreground">
-            {post.content.slice(0, 200)}
+            {post.content}
           </p>
           <Link
             href={`/blog/${post.slug}`}
