@@ -21,8 +21,7 @@ async function getPost(slug: string): Promise<Post> {
   }
 }
 
-export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
+export default async function BlogPost({ slug }: { slug: string }) {
   const post = await getPost(slug);
 
   return (
