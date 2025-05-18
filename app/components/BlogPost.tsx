@@ -1,4 +1,6 @@
 import { Post } from "@/lib/postsHelper";
+import { serialize } from 'next-mdx-remote/serialize';
+import MDXContent from './MDXContent';
 
 const REVALIDATE_TIME = parseInt(process.env.REVALIDATE_TIME || "3600");
 
@@ -23,11 +25,13 @@ async function getPost(slug: string): Promise<Post> {
 
 export default async function BlogPost({ slug }: { slug: string }) {
   const post = await getPost(slug);
+  const mdxSource = await serialize(post.content);
 
   return (
-    <div className="container flex flex-col items-center px-4 py-8">
-      <h1 className="text-4xl font-bold mb-8">{post.title}</h1>
-      <div className="prose max-w-none">{post.content}</div>
+    <div className="w-full flex flex-col items-center px-4 py-8">
+      <div className="max-w-[1024px] w-full">
+        <MDXContent source={mdxSource} />
+      </div>
     </div>
   );
 } 
