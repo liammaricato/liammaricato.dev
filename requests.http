@@ -1,0 +1,20 @@
+GET http://localhost:3000/api/posts
+
+###
+
+GET http://localhost:3000/api/posts/My-first-post
+
+###
+
+POST http://localhost:3000/api/posts/refresh
+
+###
+
+GET https://api.github.com/repos/liammaricato/personal-blog-mdx/git/blobs/SHA
+
+###
+curl -L \
+  -H "Accept: application/vnd.github+json" \
+  -H "Authorization: Bearer ${GITHUB_TOKEN}" \
+  -H "X-GitHub-Api-Version: 2022-11-28" \
+  https://api.github.com/repos/liammaricato/personal-blog-mdx/git/trees/main?recursive=1'
