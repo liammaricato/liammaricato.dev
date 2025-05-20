@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Liam Maricato's Portfolio
+
+A personal portfolio website built with Next.js, featuring a dynamic blog section that pulls content directly from GitHub.
+
+## Features
+
+- Modern, responsive design built with Next.js and Tailwind CSS
+- Dynamic blog section that fetches and renders MDX content from a GitHub repository
+- Clean and minimal UI with smooth animations
+- Built with TypeScript for better type safety and developer experience
+
+## Tech Stack
+
+- Next.js 15
+- TypeScript
+- Tailwind CSS
+- MDX for blog content
+- GitHub API integration for blog posts
 
 ## Getting Started
 
-First, run the development server:
-
+1. Clone the repository
+2. Install dependencies:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Run the development server:
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+4. Open [http://localhost:3000](http://localhost:3000) to view the site
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Blog Implementation
 
-## Learn More
+The blog section uses MDX to render content fetched from a GitHub repository. This allows for:
+- Writing blog posts in Markdown with React components
+- Version control for blog content
+- Easy content management through GitHub
+- Dynamic content loading without database requirements
 
-To learn more about Next.js, take a look at the following resources:
+## Development Status
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+🚧 This project is currently a work in progress. More features and content will be added over time.
