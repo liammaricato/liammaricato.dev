@@ -16,17 +16,17 @@ interface GithubTreeItem {
 }
 
 interface GithubBlob {
-    content: string;
-    encoding: string;
-    sha: string;
-    size: number;
-    url: string;
-  }
-  
-  interface GithubResponse<T> {
-    status: number;
-    data: T;
-  }
+  content: string;
+  encoding: string;
+  sha: string;
+  size: number;
+  url: string;
+}
+
+interface GithubResponse<T> {
+  status: number;
+  data: T;
+}
 
 async function getGithubShaTree(): Promise<GithubTreeItem[]> {
   console.log("Fetching tree for path: ", PATH);
